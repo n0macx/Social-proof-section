@@ -1,0 +1,199 @@
+:root {
+    --dark-magenta: hsl(300, 43%, 22%); 
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --soft-pink: hsl(333, 80%, 67%);
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Spartan', sans-serif;
+    font-size: 15px;
+    color: var(--dark-magenta);
+    background-image: url(/social-proof-section-master/Social-proof-section/images/bg-pattern-top-mobile.svg);
+    background-repeat: no-repeat;
+}
+.wrapper {
+    text-align: center;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+/* ======top-section====== */
+
+.top-container h1 {
+    margin: 0 5px;
+    line-height: 1em;
+    padding: 1.8em 0 1em;
+}
+.top-container h4 {
+    line-height: 1.5;
+    font-weight: 500;  
+    color: var(--dark-grayish-magenta);
+}
+/* =========middle section===== */
+
+.ratings {
+    font-size: .7rem;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 1fr;
+}
+.rating {
+    padding: 15px;
+    background-color: var(--light-grayish-magenta);
+    border-radius: 10px;
+}
+.rating h4 {
+    padding-top: 15px;
+}
+.rating img {
+    padding: 0 3px;
+}
+/* =========bottom section===== */
+
+.bottom-container {
+    display: grid;
+    gap: 10px;
+}
+.comments {
+    border-radius: 10px;
+    background: var(--dark-magenta);
+    color: white;
+    font-size: 0.7rem;
+    line-height: 1.5;
+    font-weight: 500;
+    padding: 30px;
+}
+.comments img {
+    border-radius: 50%;
+    width: 4em;
+}
+.comments figure {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.comments figcaption {
+    align-self: center;
+    padding-left: 2em;
+}
+.verification {
+    font-size: 1.1em;
+    color: var(--soft-pink);
+}
+.comments blockquote {
+    font-size: 1.21em;
+    text-align: left;
+    padding-top: 25px;
+}
+/* =======================================Media-queries=============================== */
+
+@media (min-width: 600px) {
+    /* === middle section=== */
+    .rating {
+        display: flex;
+        align-items: center;
+        max-width: 550px;
+        max-height: 100px;
+    }
+
+    .rating h4,
+    .rating .stars {
+        font-size: 1.3em;
+        padding: 15px 20px;
+    }
+}
+@media (min-width: 1000px) {
+    body {
+        margin: 100px;
+        font-size: 1.4rem;
+        background: url(/social-proof-section-master/Social-proof-section/images/bg-pattern-top-desktop.svg),
+        url(/social-proof-section-master/Social-proof-section/images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: 0 0, right bottom;
+    }
+    .wrapper {
+        gap: 40px;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "top top top middle middle middle"
+            "bottom bottom bottom bottom bottom bottom";
+    }
+    
+    /* ======top-section==== */
+    .top-container {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-area: top;
+        text-align: left;
+        grid-column: 1 / 4;
+    }
+
+    .top-container h1 {
+        padding-top: 0;
+        padding-bottom: 20px;
+        grid-column: 1 / 6;
+    }
+    .top-container h4 {
+        font-size: .7em;
+        padding-bottom: 40px;
+        grid-column: 1 / -2;
+    }
+    /* === middle section=== */
+    .middle-container {
+        grid-area: middle;
+        align-content: flex-start;
+    }
+
+    .rating {
+        display: flex;
+        align-items: center;
+        max-width: 550px;
+        max-height: 60px;
+    }
+
+    .rating1 {
+        justify-self: flex-start;
+    }
+
+    .rating2 {
+        justify-self: center;
+    }
+
+    .rating3 {
+        justify-self: flex-end;
+    }
+
+    .rating h4,
+    .rating .stars {
+        font-size: 1.3em;
+        padding: 15px 20px;
+    }
+    /* =========bottom-section========== */
+
+    .bottom-container {
+        grid-area: bottom;
+        display: flex;
+        gap: 30px;
+    }
+
+    .comment1 {
+        align-self: flex-start;
+    }
+
+    .comment2 {
+        align-self: center;
+    }
+
+    .comment3 {
+        align-self: flex-end;
+    }
+}
